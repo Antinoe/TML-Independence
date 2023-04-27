@@ -1,0 +1,9 @@
+A mod that allows you to make your own self-sustaining life. No longer will you be dependent upon the Stylist to cut your hair, the Goblin Tinkerer for advanced technology, the Mechanic for electronics or even the Merchant for the basic necessities.
+
+You will be able to cut your own hair, craft complex devices and, overall, start with nothing and still progress through the game without external assistance.
+
+Development Roadmap (Will be added onto):
+-Polish up the synergy between Renewability and Primitive Start.
+-Rework the Foraging (formerly known as 'Scavenging') system.
+-Improve the self-sufficiency aspects.
+-Make more resources renewable through realistic means.

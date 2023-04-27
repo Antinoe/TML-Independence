@@ -1,0 +1,4 @@
+displayName = Independence
+author = Antinous and Logar
+version = 1.0
+homepage = https://github.com/Antinoe/TML-Independence
