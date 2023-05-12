@@ -9,8 +9,8 @@ namespace Independence.Content.Items.Special
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mortar and Pestle");
-			Tooltip.SetDefault("Right Click items on this tool to grind them up.");
+			// DisplayName.SetDefault("Mortar and Pestle");
+			// Tooltip.SetDefault("Right Click items on this tool to grind them up.");
 		}
 
 		public override void SetDefaults()

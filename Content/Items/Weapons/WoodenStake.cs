@@ -10,7 +10,7 @@ namespace Independence.Content.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Wooden Stake");
+			// DisplayName.SetDefault("Wooden Stake");
 		}
 		
 		public override void SetDefaults()

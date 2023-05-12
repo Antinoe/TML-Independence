@@ -9,8 +9,8 @@ namespace Independence.Content.Items.Materials
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stone Shards");
-			Tooltip.SetDefault("A small pile of stone shards.");
+			// DisplayName.SetDefault("Stone Shards");
+			// Tooltip.SetDefault("A small pile of stone shards.");
 		}
 
 		public override void SetDefaults()

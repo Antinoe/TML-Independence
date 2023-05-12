@@ -9,7 +9,7 @@ namespace Independence.Content.Items.Tools
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Stone Pickaxe");
+			// DisplayName.SetDefault("Stone Pickaxe");
 			//Tooltip.SetDefault("A rudimentary Pickaxe.");
 		}
 

@@ -10,8 +10,8 @@ namespace Independence.Content.Items.Weapons
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Wooden Stake Test");
-			Tooltip.SetDefault("Right click for a slash that confuses enemies and heals you.");
+			// DisplayName.SetDefault("Wooden Stake Test");
+			// Tooltip.SetDefault("Right click for a slash that confuses enemies and heals you.");
 		}
 
 		public override void SetDefaults() 
@@ -69,32 +69,32 @@ namespace Independence.Content.Items.Weapons
 			return base.UseItem(Player);
 		}*/
 		
-		public override void OnHitNPC(Player Player, NPC Target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			if (Item.useStyle == 8)
 			{
 				// 60 frames = 1 second
 				//Target.AddBuff(BuffID.Weak, 300);
 				//Target.AddBuff(BuffID.Bleeding, 300);
-				Target.AddBuff(BuffID.Confused, 300);
-				Player.AddBuff(BuffID.HeartyMeal, 150);
-				Player.AddBuff(BuffID.Panic, 75);
+				target.AddBuff(BuffID.Confused, 300);
+				player.AddBuff(BuffID.HeartyMeal, 150);
+				player.AddBuff(BuffID.Panic, 75);
 				//Player.AddBuff(BuffID.Darkness, 150);
 				//Player.AddBuff(BuffID.Blackout, 150);
 				//Player.AddBuff(BuffID.Obstructed, 150);
 			}
 		}
 		
-		public override void OnHitPvp(Player Player, Player Target, int damage, bool crit)
+		public override void OnHitPvp(Player player, Player target, Player.HurtInfo hurtInfo)
 		{
 			if (Item.useStyle == 8)
 			{
 				// 60 frames = 1 second
 				//Target.AddBuff(BuffID.Weak, 300);
 				//Target.AddBuff(BuffID.Bleeding, 300);
-				Target.AddBuff(BuffID.Confused, 300);
-				Player.AddBuff(BuffID.HeartyMeal, 150);
-				Player.AddBuff(BuffID.Panic, 75);
+				target.AddBuff(BuffID.Confused, 300);
+				player.AddBuff(BuffID.HeartyMeal, 150);
+				player.AddBuff(BuffID.Panic, 75);
 				//Player.AddBuff(BuffID.Darkness, 150);
 				//Player.AddBuff(BuffID.Blackout, 150);
 				//Player.AddBuff(BuffID.Obstructed, 150);

@@ -9,8 +9,8 @@ namespace Independence.Content.Items.Special
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Grinding Kit");
-			Tooltip.SetDefault("Right Click to strike these rocks together for Stone Shards.");
+			// DisplayName.SetDefault("Grinding Kit");
+			// Tooltip.SetDefault("Right Click to strike these rocks together for Stone Shards.");
 		}
 
 		public override void SetDefaults()

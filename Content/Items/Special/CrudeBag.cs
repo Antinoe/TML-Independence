@@ -12,8 +12,8 @@ namespace Independence.Content.Items.Special
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crude Bag");
-			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
+			// DisplayName.SetDefault("Crude Bag");
+			// Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 
 		public override void SetDefaults()

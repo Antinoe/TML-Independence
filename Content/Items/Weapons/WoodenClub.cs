@@ -9,7 +9,7 @@ namespace Independence.Content.Items.Weapons
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Wooden Club");
+			// DisplayName.SetDefault("Wooden Club");
 		}
 
 		public override void SetDefaults() 

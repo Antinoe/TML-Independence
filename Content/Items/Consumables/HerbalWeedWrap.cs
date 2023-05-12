@@ -9,7 +9,7 @@ namespace Independence.Content.Items.Consumables
 	{
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("A fine wrap of lightweight nutrients.");
+            // Tooltip.SetDefault("A fine wrap of lightweight nutrients.");
         }
 
         public override void SetDefaults()

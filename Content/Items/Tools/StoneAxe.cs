@@ -9,7 +9,7 @@ namespace Independence.Content.Items.Tools
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Stone Axe");
+			// DisplayName.SetDefault("Stone Axe");
 			//Tooltip.SetDefault("Bare Hands: Break Blocks.");
 		}
 

@@ -10,8 +10,8 @@ namespace Independence.Content.Items.Tools
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Wooden Stub");
-			Tooltip.SetDefault("Right-Click to hammer tiles." + "\n'For when there is truly nothing else.'");
+			// DisplayName.SetDefault("Wooden Stub");
+			// Tooltip.SetDefault("Right-Click to hammer tiles." + "\n'For when there is truly nothing else.'");
 		}
 
 		public override void SetDefaults()

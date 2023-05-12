@@ -14,7 +14,7 @@ namespace Independence.Content.Items.Special
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Composter");
+			// DisplayName.SetDefault("Composter");
 		}
 		
 		public override void SetDefaults()
