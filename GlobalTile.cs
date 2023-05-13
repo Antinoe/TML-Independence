@@ -11,23 +11,17 @@ namespace Independence
 {
     public class IndependenceGlobalTile : GlobalTile
 	{
-		public bool plantCommon;
-		public bool plantCommonDefault;
-		public bool plantCommonJungle;
-		public bool plantCommonMushroom;
-		public bool plantCommonCorrupt;
-		public bool plantCommonCrimson;
-		public bool plantCommonAsh;
-		public bool plantUncommon;
-
 		//public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
         public override void RightClick(int i, int j, int type)
 		{
-			plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
-			plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
-			plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
-			plantCommonAsh = (type == TileID.AshPlants);
-			plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
+			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
+			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
+			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
+			bool plantCommonMushroom = (type == TileID.MushroomPlants);
+			bool plantCommonCorrupt = (type == TileID.CorruptPlants);
+			bool plantCommonCrimson = (type == TileID.CrimsonPlants);
+			bool plantCommonAsh = (type == TileID.AshPlants);
+			bool plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
 
 			if (IndependenceConfig.Instance.enableScavenging)
 			{
@@ -250,11 +244,14 @@ namespace Independence
 			Tile Tile = Main.tile[i, j];
 			Player Player = Main.LocalPlayer;
 
-			plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
-			plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
-			plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
-			plantCommonAsh = (type == TileID.AshPlants);
-			plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
+			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
+			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
+			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
+			bool plantCommonMushroom = (type == TileID.MushroomPlants);
+			bool plantCommonCorrupt = (type == TileID.CorruptPlants);
+			bool plantCommonCrimson = (type == TileID.CrimsonPlants);
+			bool plantCommonAsh = (type == TileID.AshPlants);
+			bool plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
 
 			if (IndependenceConfig.Instance.enableScavenging)
 			{
