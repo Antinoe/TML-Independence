@@ -11,15 +11,27 @@ namespace Independence
 {
     public class IndependenceGlobalTile : GlobalTile
 	{
+		public bool plantCommon;
+		public bool plantCommonDefault;
+		public bool plantCommonJungle;
+		public bool plantCommonMushroom;
+		public bool plantCommonCorrupt;
+		public bool plantCommonCrimson;
+		public bool plantUncommon;
+
 		//public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
         public override void RightClick(int i, int j, int type)
 		{
+			plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants);
+			plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
+			plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
+			plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
+
 			if (IndependenceConfig.Instance.enableScavenging)
 			{
 				if (IndependenceConfig.Instance.enableScavengingFromCommonPlants)
 				{
-//Common Plants.
-					if (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants)
+					if (plantCommon)
 					{
 						WorldGen.KillTile(i, j);
 						if (IndependenceConfig.Instance.enableScavengingHay && Main.rand.Next(4) == 0)
@@ -42,7 +54,7 @@ namespace Independence
 						{
 							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);
 						}
-						if (type == TileID.Plants || type == TileID.Plants2)
+						if (plantCommonDefault)
 						{
 							if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
 							{
@@ -72,7 +84,7 @@ namespace Independence
 								}
 							}
 						}
-						if (type == TileID.JunglePlants || type == TileID.JunglePlants2)
+						if (plantCommonJungle)
 						{
 							if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
 							{
@@ -90,14 +102,14 @@ namespace Independence
 								}
 							}
 						}
-						if (type == TileID.MushroomPlants)
+						if (plantCommonMushroom)
 						{
 							if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlueMoss, 1);
 							}
 						}
-						if (type == TileID.CorruptPlants)
+						if (plantCommonCorrupt)
 						{
 							if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
 							{
@@ -115,7 +127,7 @@ namespace Independence
 								}
 							}
 						}
-						if (type == TileID.CrimsonPlants)
+						if (plantCommonCorrupt)
 						{
 							if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
 							{
@@ -135,10 +147,9 @@ namespace Independence
 						}
 					}
 				}
-//Uncommon Plants.
 				if (IndependenceConfig.Instance.enableScavengingFromUncommonPlants)
 				{
-					if (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad)
+					if (plantUncommon)
 					{
 						WorldGen.KillTile(i, j);
 						if (IndependenceConfig.Instance.enableScavengingHay && Main.rand.Next(2) == 0)
