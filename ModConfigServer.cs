@@ -43,6 +43,11 @@ namespace Independence
         [DefaultValue(true)]
         public bool enableScavengingAcorn {get; set;}
 		
+        [Label("[i:StoneBlock] Scavenge Stone")]
+        [Tooltip("[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableScavengingStone {get; set;}
+		
         [Label("[i:GreenMoss] Scavenge Moss")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]

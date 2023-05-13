@@ -46,6 +46,10 @@ namespace Independence
 						{
 							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);
 						}
+						if (IndependenceConfig.Instance.enableScavengingStone && Main.rand.Next(20) == 0)
+						{
+							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);
+						}
 						if (IndependenceConfig.Instance.enableScavengingVine && Main.rand.Next(80) == 0)
 						{
 							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);
