@@ -17,14 +17,16 @@ namespace Independence
 		public bool plantCommonMushroom;
 		public bool plantCommonCorrupt;
 		public bool plantCommonCrimson;
+		public bool plantCommonAsh;
 		public bool plantUncommon;
 
 		//public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
         public override void RightClick(int i, int j, int type)
 		{
-			plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants);
+			plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
 			plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
 			plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
+			plantCommonAsh = (type == TileID.AshPlants);
 			plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
 
 			if (IndependenceConfig.Instance.enableScavenging)
