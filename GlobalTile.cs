@@ -22,6 +22,7 @@ namespace Independence
 			bool plantCommonCrimson = (type == TileID.CrimsonPlants);
 			bool plantCommonAsh = (type == TileID.AshPlants);
 			bool plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
+			bool plantVine = (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines);
 
 			if (IndependenceConfig.Instance.enableScavenging)
 			{
@@ -241,7 +242,7 @@ namespace Independence
 		
 		public override void MouseOver(int i, int j, int type)
 		{
-			Tile Tile = Main.tile[i, j];
+			Tile tile = Main.tile[i, j];
 			Player Player = Main.LocalPlayer;
 
 			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
@@ -252,6 +253,7 @@ namespace Independence
 			bool plantCommonCrimson = (type == TileID.CrimsonPlants);
 			bool plantCommonAsh = (type == TileID.AshPlants);
 			bool plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
+			bool plantVine = (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines);
 
 			if (IndependenceConfig.Instance.enableScavenging)
 			{
@@ -260,7 +262,7 @@ namespace Independence
 					if (plantCommon)
 					{
 						Player.cursorItemIconEnabled = true;
-						if (Tile.TileFrameX >= 0)
+						if (tile.TileFrameX >= 0)
 						{
 							Player.cursorItemIconID = ItemID.PowerGlove;
 						}
@@ -271,7 +273,7 @@ namespace Independence
 					if (plantUncommon)
 					{
 						Player.cursorItemIconEnabled = true;
-						if (Tile.TileFrameX >= 0)
+						if (tile.TileFrameX >= 0)
 						{
 							Player.cursorItemIconID = ItemID.PowerGlove;
 						}
@@ -279,10 +281,10 @@ namespace Independence
 				}
 				else if (IndependenceConfig.Instance.enableScavengingFromVines)
 				{
-					if (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines)
+					if (plantVine)
 					{
 						Player.cursorItemIconEnabled = true;
-						if (Tile.TileFrameX >= 0)
+						if (tile.TileFrameX >= 0)
 						{
 							Player.cursorItemIconID = ItemID.PowerGlove;
 						}
