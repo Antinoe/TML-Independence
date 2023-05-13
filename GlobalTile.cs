@@ -249,11 +249,18 @@ namespace Independence
 		{
 			Tile Tile = Main.tile[i, j];
 			Player Player = Main.LocalPlayer;
+
+			plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
+			plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
+			plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
+			plantCommonAsh = (type == TileID.AshPlants);
+			plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
+
 			if (IndependenceConfig.Instance.enableScavenging)
 			{
 				if (IndependenceConfig.Instance.enableScavengingFromCommonPlants)
 				{
-					if (Tile.TileType == TileID.Plants || Tile.TileType == TileID.Plants2 || Tile.TileType == TileID.JunglePlants || Tile.TileType == TileID.JunglePlants2 || Tile.TileType == TileID.MushroomPlants || Tile.TileType == TileID.CorruptPlants || Tile.TileType == TileID.CrimsonPlants)
+					if (plantCommon)
 					{
 						Player.cursorItemIconEnabled = true;
 						if (Tile.TileFrameX >= 0)
@@ -264,7 +271,7 @@ namespace Independence
 				}
 				else if (IndependenceConfig.Instance.enableScavengingFromUncommonPlants)
 				{
-					if (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad)
+					if (plantUncommon)
 					{
 						Player.cursorItemIconEnabled = true;
 						if (Tile.TileFrameX >= 0)
