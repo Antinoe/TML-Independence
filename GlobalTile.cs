@@ -94,8 +94,6 @@ namespace Independence
 						{
 							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
-							if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Wood, 1);}
-							if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);}
 						}
 						if (forageFocus3)
 						{
@@ -107,6 +105,11 @@ namespace Independence
 							if (forageFocus1)
 							{
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.GreenMoss, 1);}
+							}
+							if (forageFocus2)
+							{
+								if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Wood, 1);}
+								if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);}
 							}
 							if (forageFocus3)
 							{
@@ -125,6 +128,11 @@ namespace Independence
 							if (forageFocus1)
 							{
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BrownMoss, 1);}
+							}
+							if (forageFocus2)
+							{
+								if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.RichMahogany, 1);}
+								if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);}
 							}
 							if (forageFocus3)
 							{
@@ -148,6 +156,11 @@ namespace Independence
 							{
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.PurpleMoss, 1);}
 							}
+							if (forageFocus2)
+							{
+								if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Ebonwood, 1);}
+								if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.EbonstoneBlock, 1);}
+							}
 							if (forageFocus3)
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
@@ -163,6 +176,11 @@ namespace Independence
 							{
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.RedMoss, 1);}
 							}
+							if (forageFocus2)
+							{
+								if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Shadewood, 1);}
+								if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.CrimstoneBlock, 1);}
+							}
 							if (forageFocus3)
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
@@ -177,6 +195,11 @@ namespace Independence
 							if (forageFocus1)
 							{
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.LavaMoss, 1);}
+							}
+							if (forageFocus2)
+							{
+								if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.AshWood, 1);}
+								if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Obsidian, 1);}
 							}
 							if (forageFocus3)
 							{
