@@ -84,39 +84,18 @@ namespace Independence
 						{
 							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
-							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(4) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(10) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingAcorn && Main.rand.Next(20) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(80) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(160) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);
-							}
+							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(4) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);}
+							if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);}
+							if (IndependenceConfig.Instance.enableForagingAcorn && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);}
+							if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(80) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);}
+							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(160) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);}
 						}
 						if (forageFocus2)
 						{
 							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
-							if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Wood, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);
-							}
+							if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Wood, 1);}
+							if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);}
 						}
 						if (forageFocus3)
 						{
@@ -127,35 +106,17 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-								{
-									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.GreenMoss, 1);
-								}
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.GreenMoss, 1);}
 							}
 							if (forageFocus3)
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Apple, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Apricot, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Grapefruit, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Lemon, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Peach, 1);
-									}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Apple, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Apricot, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Grapefruit, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Lemon, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Peach, 1);}
 								}
 							}
 						}
@@ -163,23 +124,14 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-								{
-									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BrownMoss, 1);
-								}
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BrownMoss, 1);}
 							}
 							if (forageFocus3)
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Mango, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Pineapple, 1);
-									}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Mango, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Pineapple, 1);}
 								}
 							}
 						}
@@ -187,33 +139,21 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-								{
-									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlueMoss, 1);
-								}
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlueMoss, 1);}
 							}
 						}
 						if (plantCommonCorrupt)
 						{
 							if (forageFocus1)
 							{
-								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-								{
-									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.PurpleMoss, 1);
-								}
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.PurpleMoss, 1);}
 							}
 							if (forageFocus3)
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlackCurrant, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Elderberry, 1);
-									}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlackCurrant, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Elderberry, 1);}
 								}
 							}
 						}
@@ -221,23 +161,14 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-								{
-									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.RedMoss, 1);
-								}
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.RedMoss, 1);}
 							}
 							if (forageFocus3)
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BloodOrange, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Rambutan, 1);
-									}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BloodOrange, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Rambutan, 1);}
 								}
 							}
 						}
@@ -245,23 +176,14 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-								{
-									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.LavaMoss, 1);
-								}
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.LavaMoss, 1);}
 							}
 							if (forageFocus3)
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Pomegranate, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.SpicyPepper, 1);
-									}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Pomegranate, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.SpicyPepper, 1);}
 								}
 							}
 						}
@@ -275,26 +197,16 @@ namespace Independence
 						{
 							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
-							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(2) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(5) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingAcorn && Main.rand.Next(10) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(40) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);
-							}
-							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(80) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);
-							}
+							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(2) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);}
+							if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(5) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);}
+							if (IndependenceConfig.Instance.enableForagingAcorn && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);}
+							if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(40) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);}
+							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(80) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);}
+						}
+						if (forageFocus2)
+						{
+							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
+							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 						}
 						if (forageFocus3)
 						{
@@ -304,14 +216,8 @@ namespace Independence
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Banana, 1);
-									}
-									if (Main.rand.Next(100) == 0)
-									{
-										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Coconut, 1);
-									}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Banana, 1);}
+									if (Main.rand.Next(100) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Coconut, 1);}
 								}
 							}
 						}
