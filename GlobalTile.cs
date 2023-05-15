@@ -50,13 +50,13 @@ namespace Independence
 		//public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
         public override void RightClick(int i, int j, int type)
 		{
-			var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
-			var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
-			var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
-			var forageFocus1 = holdShift;
-			var forageFocus2 = holdControl;
-			var forageFocus3 = holdAlt;
-			var forageFocus4 = holdShift && holdControl;
+			//var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
+			//var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
+			//var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
+			var forageFocus1 = Independence.ForageFocus1.Current;
+			var forageFocus2 = Independence.ForageFocus2.Current;
+			var forageFocus3 = Independence.ForageFocus3.Current;
+			//var forageFocus4 = holdShift && holdControl;
 			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
 			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
 			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
@@ -345,13 +345,13 @@ namespace Independence
 			Tile tile = Main.tile[i, j];
 			Player Player = Main.LocalPlayer;
 
-			var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
-			var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
-			var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
-			var forageFocus1 = holdShift;
-			var forageFocus2 = holdControl;
-			var forageFocus3 = holdShift && holdControl;
-			var forageFocus4 = holdAlt;
+			//var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
+			//var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
+			//var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
+			var forageFocus1 = Independence.ForageFocus1.Current;
+			var forageFocus2 = Independence.ForageFocus2.Current;
+			var forageFocus3 = Independence.ForageFocus3.Current;
+			//var forageFocus4 = holdShift && holdControl;
 			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
 			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
 			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
