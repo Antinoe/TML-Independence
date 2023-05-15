@@ -14,6 +14,13 @@ namespace Independence
 		//public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
         public override void RightClick(int i, int j, int type)
 		{
+			var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
+			var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
+			var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
+			var forageModifier1 = holdShift;
+			var forageModifier2 = holdControl;
+			var forageModifier3 = holdShift && holdControl;
+			var forageModifier4 = holdAlt;
 			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
 			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
 			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
@@ -245,6 +252,13 @@ namespace Independence
 			Tile tile = Main.tile[i, j];
 			Player Player = Main.LocalPlayer;
 
+			var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
+			var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
+			var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
+			var forageModifier1 = holdShift;
+			var forageModifier2 = holdControl;
+			var forageModifier3 = holdShift && holdControl;
+			var forageModifier4 = holdAlt;
 			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
 			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
 			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
@@ -262,9 +276,17 @@ namespace Independence
 					if (plantCommon)
 					{
 						Player.cursorItemIconEnabled = true;
-						if (tile.TileFrameX >= 0)
+						if (forageModifier1 && tile.TileFrameX >= 0)
 						{
-							Player.cursorItemIconID = ItemID.PowerGlove;
+							Player.cursorItemIconID = ItemID.Hay;
+						}
+						if (forageModifier2 && tile.TileFrameX >= 0)
+						{
+							Player.cursorItemIconID = ItemID.Wood;
+						}
+						if (forageModifier3 && tile.TileFrameX >= 0)
+						{
+							Player.cursorItemIconID = ItemID.Apple;
 						}
 					}
 				}
