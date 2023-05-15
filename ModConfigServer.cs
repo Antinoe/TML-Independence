@@ -11,167 +11,167 @@ namespace Independence
 		
         public static IndependenceConfig Instance;
 		
-	[Header("Scavenging")]
+	[Header("Foraging")]
 		
-        [Label("Enable Scavenging")]
+        [Label("Enable Foraging")]
         [Tooltip("If false, Players cannot Right-Click certain tiles for resources.\n[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavenging {get; set;}
+        public bool enableForaging {get; set;}
 		
-        [Label("Scavenge from Common Plants")]
-        [Tooltip("If false, Players cannot Scavenge from Common Plants, such as Grass and Mushrooms.\n[Default: On]")]
+        [Label("Forage from Common Plants")]
+        [Tooltip("If false, Players cannot Forage from Common Plants, such as Grass and Mushrooms.\n[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingFromCommonPlants {get; set;}
+        public bool enableForagingFromCommonPlants {get; set;}
 		
-        [Label("Scavenge from Uncommon Plants")]
-        [Tooltip("If false, Players cannot Scavenge from Uncommon Plants, such as Cattails, Lily Pads and Sea Oats.\n[Default: On]")]
+        [Label("Forage from Uncommon Plants")]
+        [Tooltip("If false, Players cannot Forage from Uncommon Plants, such as Cattails, Lily Pads and Sea Oats.\n[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingFromUncommonPlants {get; set;}
+        public bool enableForagingFromUncommonPlants {get; set;}
 		
-        [Label("[i:Hay] Scavenge Hay")]
+        [Label("[i:Hay] Forage Hay")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingHay {get; set;}
+        public bool enableForagingHay {get; set;}
 		
-        [Label("[i:Cobweb] Scavenge Cobwebs")]
+        [Label("[i:Cobweb] Forage Cobwebs")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingCobweb {get; set;}
+        public bool enableForagingCobweb {get; set;}
 		
-        [Label("[i:Acorn] Scavenge Acorns")]
+        [Label("[i:Acorn] Forage Acorns")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingAcorn {get; set;}
+        public bool enableForagingAcorn {get; set;}
 		
-        [Label("[i:StoneBlock] Scavenge Stone")]
+        [Label("[i:StoneBlock] Forage Stone")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingStone {get; set;}
+        public bool enableForagingStone {get; set;}
 		
-        [Label("[i:GreenMoss] Scavenge Moss")]
+        [Label("[i:GreenMoss] Forage Moss")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingMoss {get; set;}
+        public bool enableForagingMoss {get; set;}
 		
-        [Label("[i:Vine] Scavenge Vines")]
+        [Label("[i:Vine] Forage Vines")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingVine {get; set;}
+        public bool enableForagingVine {get; set;}
 		
-        [Label("[i:HerbBag] Scavenge Herb Bags")]
+        [Label("[i:HerbBag] Forage Herb Bags")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingHerbBag {get; set;}
+        public bool enableForagingHerbBag {get; set;}
 		
 		/*
-        [Label("Scavenge from Common Plants")]
-        [Tooltip("If false, Players cannot Scavenge from Common Plants, such as Grass and Mushrooms.\n[Default: On]")]
+        [Label("Forage from Common Plants")]
+        [Tooltip("If false, Players cannot Forage from Common Plants, such as Grass and Mushrooms.\n[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingFromCommonPlants {get; set;}
+        public bool enableForagingFromCommonPlants {get; set;}
 		
-        [Label("Scavenge from Uncommon Plants")]
-        [Tooltip("If false, Players cannot Scavenge from Uncommon Plants, such as Cattails, Lily Pads and Sea Oats.\n[Default: On]")]
+        [Label("Forage from Uncommon Plants")]
+        [Tooltip("If false, Players cannot Forage from Uncommon Plants, such as Cattails, Lily Pads and Sea Oats.\n[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingFromUncommonPlants {get; set;}
+        public bool enableForagingFromUncommonPlants {get; set;}
 		
-        [Label("[i:Hay] Hay Scavenge Chance")]
+        [Label("[i:Hay] Hay Forage Chance")]
         [Tooltip("[Default: 4]")]
         [Slider]
         [DefaultValue(4)]
         [Range(1, 30)]
         [Increment(1)]
-        public int scavengeChanceCommonPlantsHay {get; set;}
+        public int forageChanceCommonPlantsHay {get; set;}
 		
-        [Label("[i:Cobweb] Cobweb Scavenge Chance")]
+        [Label("[i:Cobweb] Cobweb Forage Chance")]
         [Tooltip("[Default: 10]")]
         [Slider]
         [DefaultValue(10)]
         [Range(1, 30)]
         [Increment(1)]
-        public int scavengeChanceCommonPlantsCobweb {get; set;}
+        public int forageChanceCommonPlantsCobweb {get; set;}
 		
-        [Label("[i:Acorn] Acorn Scavenge Chance")]
+        [Label("[i:Acorn] Acorn Forage Chance")]
         [Tooltip("[Default: 20]")]
         [Slider]
         [DefaultValue(20)]
         [Range(1, 30)]
         [Increment(1)]
-        public int scavengeChanceCommonPlantsAcorn {get; set;}
+        public int forageChanceCommonPlantsAcorn {get; set;}
 		
-        [Label("[i:GreenMoss] Moss Scavenge Chance")]
+        [Label("[i:GreenMoss] Moss Forage Chance")]
         [Tooltip("[Default: 10]")]
         [Slider]
         [DefaultValue(10)]
         [Range(20, 200)]
         [Increment(20)]
-        public int scavengeChanceCommonPlantsMoss {get; set;}
+        public int forageChanceCommonPlantsMoss {get; set;}
 		
-        [Label("[i:Vine] Vine Scavenge Chance")]
+        [Label("[i:Vine] Vine Forage Chance")]
         [Tooltip("[Default: 80]")]
         [Slider]
         [DefaultValue(80)]
         [Range(20, 200)]
         [Increment(20)]
-        public int scavengeChanceCommonPlantsVine {get; set;}
+        public int forageChanceCommonPlantsVine {get; set;}
 		
-        [Label("[i:HerbBag] Herb Bag Scavenge Chance")]
+        [Label("[i:HerbBag] Herb Bag Forage Chance")]
         [Tooltip("[Default: 80]")]
         [Slider]
         [DefaultValue(160)]
         [Range(20, 200)]
         [Increment(20)]
-        public int scavengeChanceCommonPlantsHerbBag {get; set;}
+        public int forageChanceCommonPlantsHerbBag {get; set;}
 		*/
 		
-        [Label("Scavenge from Vines")]
+        [Label("Forage from Vines")]
         [Tooltip("[Default: Off]")]
         [DefaultValue(false)]
-        public bool enableScavengingFromVines {get; set;}
+        public bool enableForagingFromVines {get; set;}
 		
-        [Label("Scavenge for Fruits")]
-        [Tooltip("If false, Players cannot Scavenge for Fruits from Common Plants.\n[Default: On]")]
+        [Label("Forage for Fruits")]
+        [Tooltip("If false, Players cannot Forage for Fruits from Common Plants.\n[Default: On]")]
         [DefaultValue(true)]
-        public bool enableScavengingForFruits {get; set;}
+        public bool enableForagingForFruits {get; set;}
 		
-        [Label("[i:Apple] Forest Fruit Scavenge Chance")]
+        [Label("[i:Apple] Forest Fruit Forage Chance")]
         [Tooltip("Chance for Common Plants to drop fruit.\n[Default: 200]")]
         [Slider]
         [DefaultValue(200)]
         [Range(20, 300)]
         [Increment(20)]
-        public int scavengeChanceFruitsForest {get; set;}
+        public int forageChanceFruitsForest {get; set;}
 		
-        [Label("[i:Mango] Jungle Fruit Scavenge Chance")]
+        [Label("[i:Mango] Jungle Fruit Forage Chance")]
         [Tooltip("Chance for Common Plants to drop fruit.\n[Default: 100]")]
         [Slider]
         [DefaultValue(100)]
         [Range(20, 300)]
         [Increment(20)]
-        public int scavengeChanceFruitsJungle {get; set;}
+        public int forageChanceFruitsJungle {get; set;}
 		
-        [Label("[i:Coconut] Palm Fruit Scavenge Chance")]
+        [Label("[i:Coconut] Palm Fruit Forage Chance")]
         [Tooltip("Chance for Common Plants to drop fruit.\n[Default: 100]")]
         [Slider]
         [DefaultValue(100)]
         [Range(20, 300)]
         [Increment(20)]
-        public int scavengeChanceFruitsPalm {get; set;}
+        public int forageChanceFruitsPalm {get; set;}
 		
-        [Label("[i:Elderberry] Corruption Fruit Scavenge Chance")]
+        [Label("[i:Elderberry] Corruption Fruit Forage Chance")]
         [Tooltip("Chance for Common Plants to drop fruit.\n[Default: 100]")]
         [Slider]
         [DefaultValue(100)]
         [Range(20, 300)]
         [Increment(20)]
-        public int scavengeChanceFruitsCorruption {get; set;}
+        public int forageChanceFruitsCorruption {get; set;}
 		
-        [Label("[i:Rambutan] Crimson Fruit Scavenge Chance")]
+        [Label("[i:Rambutan] Crimson Fruit Forage Chance")]
         [Tooltip("Chance for Common Plants to drop fruit.\n[Default: 100]")]
         [Slider]
         [DefaultValue(100)]
         [Range(20, 300)]
         [Increment(20)]
-        public int scavengeChanceFruitsCrimson {get; set;}
+        public int forageChanceFruitsCrimson {get; set;}
 		
 	[Header("Recipes")]
 		

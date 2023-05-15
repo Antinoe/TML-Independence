@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
@@ -66,32 +67,32 @@ namespace Independence
 			bool plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
 			bool plantVine = (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines);
 
-			if (IndependenceConfig.Instance.enableScavenging)
+			if (IndependenceConfig.Instance.enableForaging)
 			{
-				if (IndependenceConfig.Instance.enableScavengingFromCommonPlants)
+				if (IndependenceConfig.Instance.enableForagingFromCommonPlants)
 				{
 					if (plantCommon)
 					{
 						if (forageFocus1)
 						{
 							WorldGen.KillTile(i, j);
-							if (IndependenceConfig.Instance.enableScavengingHay && Main.rand.Next(4) == 0)
+							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(4) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);
 							}
-							if (IndependenceConfig.Instance.enableScavengingCobweb && Main.rand.Next(10) == 0)
+							if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(10) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);
 							}
-							if (IndependenceConfig.Instance.enableScavengingAcorn && Main.rand.Next(20) == 0)
+							if (IndependenceConfig.Instance.enableForagingAcorn && Main.rand.Next(20) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);
 							}
-							if (IndependenceConfig.Instance.enableScavengingVine && Main.rand.Next(80) == 0)
+							if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(80) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);
 							}
-							if (IndependenceConfig.Instance.enableScavengingHerbBag && Main.rand.Next(160) == 0)
+							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(160) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);
 							}
@@ -99,7 +100,7 @@ namespace Independence
 						if (forageFocus2)
 						{
 							WorldGen.KillTile(i, j);
-							if (IndependenceConfig.Instance.enableScavengingStone && Main.rand.Next(20) == 0)
+							if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);
 							}
@@ -109,7 +110,7 @@ namespace Independence
 							if (forageFocus1)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.GreenMoss, 1);
 								}
@@ -117,25 +118,25 @@ namespace Independence
 							if (forageFocus3)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingForFruits)
+								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsForest) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Apple, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsForest) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Apricot, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsForest) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Grapefruit, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsForest) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Lemon, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsForest) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Peach, 1);
 									}
@@ -147,7 +148,7 @@ namespace Independence
 							if (forageFocus1)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BrownMoss, 1);
 								}
@@ -155,13 +156,13 @@ namespace Independence
 							if (forageFocus3)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingForFruits)
+								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsJungle) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsJungle) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Mango, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsJungle) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsJungle) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Pineapple, 1);
 									}
@@ -173,7 +174,7 @@ namespace Independence
 							if (forageFocus1)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlueMoss, 1);
 								}
@@ -184,7 +185,7 @@ namespace Independence
 							if (forageFocus1)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.PurpleMoss, 1);
 								}
@@ -192,13 +193,13 @@ namespace Independence
 							if (forageFocus3)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingForFruits)
+								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsCorruption) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCorruption) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlackCurrant, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsCorruption) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCorruption) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Elderberry, 1);
 									}
@@ -210,7 +211,7 @@ namespace Independence
 							if (forageFocus1)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.RedMoss, 1);
 								}
@@ -218,13 +219,13 @@ namespace Independence
 							if (forageFocus3)
 							{
 								WorldGen.KillTile(i, j);
-								if (IndependenceConfig.Instance.enableScavengingForFruits)
+								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsCrimson) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCrimson) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BloodOrange, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsCrimson) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCrimson) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Rambutan, 1);
 									}
@@ -233,30 +234,30 @@ namespace Independence
 						}
 					}
 				}
-				if (IndependenceConfig.Instance.enableScavengingFromUncommonPlants)
+				if (IndependenceConfig.Instance.enableForagingFromUncommonPlants)
 				{
 					if (plantUncommon)
 					{
 						if (forageFocus1)
 						{
 							WorldGen.KillTile(i, j);
-							if (IndependenceConfig.Instance.enableScavengingHay && Main.rand.Next(2) == 0)
+							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(2) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);
 							}
-							if (IndependenceConfig.Instance.enableScavengingCobweb && Main.rand.Next(5) == 0)
+							if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(5) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);
 							}
-							if (IndependenceConfig.Instance.enableScavengingAcorn && Main.rand.Next(10) == 0)
+							if (IndependenceConfig.Instance.enableForagingAcorn && Main.rand.Next(10) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);
 							}
-							if (IndependenceConfig.Instance.enableScavengingVine && Main.rand.Next(40) == 0)
+							if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(40) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);
 							}
-							if (IndependenceConfig.Instance.enableScavengingHerbBag && Main.rand.Next(80) == 0)
+							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(80) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);
 							}
@@ -266,13 +267,13 @@ namespace Independence
 							WorldGen.KillTile(i, j);
 							if (type == TileID.SeaOats)
 							{
-								if (IndependenceConfig.Instance.enableScavengingForFruits)
+								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsPalm) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsPalm) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Banana, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.scavengeChanceFruitsPalm) == 0)
+									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsPalm) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Coconut, 1);
 									}
@@ -281,47 +282,47 @@ namespace Independence
 						}
 					}
 				}
-				if (IndependenceConfig.Instance.enableScavengingFromVines)
+				if (IndependenceConfig.Instance.enableForagingFromVines)
 				{
 					if (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines)
 					{
 						WorldGen.KillTile(i, j);
-						if (IndependenceConfig.Instance.enableScavengingVine && Main.rand.Next(80) == 0)
+						if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(80) == 0)
 						{
 							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);
 						}
-						if (IndependenceConfig.Instance.enableScavengingHay && Main.rand.Next(4) == 0)
+						if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(4) == 0)
 						{
 							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);
 						}
-						if (IndependenceConfig.Instance.enableScavengingCobweb && Main.rand.Next(10) == 0)
+						if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(10) == 0)
 						{
 							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);
 						}
 						if (type == TileID.VineFlowers)
 						{
-							if (IndependenceConfig.Instance.enableScavengingHerbBag && Main.rand.Next(80) == 0)
+							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(80) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);
 							}
 						}
 						if (type == TileID.JungleVines)
 						{
-							if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
+							if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BrownMoss, 1);
 							}
 						}
 						if (type == TileID.MushroomVines)
 						{
-							if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
+							if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlueMoss, 1);
 							}
 						}
 						if (type == TileID.CrimsonVines)
 						{
-							if (IndependenceConfig.Instance.enableScavengingMoss && Main.rand.Next(10) == 0)
+							if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.RedMoss, 1);
 							}
@@ -353,9 +354,9 @@ namespace Independence
 			bool plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
 			bool plantVine = (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines);
 
-			if (IndependenceConfig.Instance.enableScavenging)
+			if (IndependenceConfig.Instance.enableForaging)
 			{
-				if (IndependenceConfig.Instance.enableScavengingFromCommonPlants)
+				if (IndependenceConfig.Instance.enableForagingFromCommonPlants)
 				{
 					if (plantCommon)
 					{
@@ -374,7 +375,7 @@ namespace Independence
 						}
 					}
 				}
-				else if (IndependenceConfig.Instance.enableScavengingFromUncommonPlants)
+				else if (IndependenceConfig.Instance.enableForagingFromUncommonPlants)
 				{
 					if (plantUncommon)
 					{
@@ -385,7 +386,7 @@ namespace Independence
 						}
 					}
 				}
-				else if (IndependenceConfig.Instance.enableScavengingFromVines)
+				else if (IndependenceConfig.Instance.enableForagingFromVines)
 				{
 					if (plantVine)
 					{
