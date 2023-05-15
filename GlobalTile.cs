@@ -7,6 +7,7 @@ using Terraria.ID;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.Audio;
+using Microsoft.Xna.Framework;
 
 namespace Independence
 {
@@ -81,6 +82,7 @@ namespace Independence
 					{
 						if (forageFocus1)
 						{
+							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(4) == 0)
 							{
@@ -105,6 +107,7 @@ namespace Independence
 						}
 						if (forageFocus2)
 						{
+							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)
 							{
@@ -119,6 +122,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
@@ -127,7 +131,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
-								Main.NewText("Forage Focus 3");
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
@@ -158,6 +162,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
@@ -166,6 +171,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
@@ -184,6 +190,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
@@ -195,6 +202,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
@@ -203,6 +211,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
@@ -221,6 +230,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
@@ -229,6 +239,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
@@ -247,6 +258,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
@@ -255,6 +267,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
+								SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
@@ -277,6 +290,7 @@ namespace Independence
 					{
 						if (forageFocus1)
 						{
+							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(2) == 0)
 							{
@@ -301,6 +315,7 @@ namespace Independence
 						}
 						if (forageFocus3)
 						{
+							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (type == TileID.SeaOats)
 							{
@@ -358,40 +373,22 @@ namespace Independence
 			{
 				if (IndependenceConfig.Instance.enableForagingFromCommonPlants)
 				{
-					if (plantCommon)
+					if (plantCommon && tile.TileFrameX >= 0)
 					{
 						Player.cursorItemIconEnabled = true;
-						if (forageFocus1 && tile.TileFrameX >= 0)
-						{
-							Player.cursorItemIconID = ItemID.Hay;
-						}
-						if (forageFocus2 && tile.TileFrameX >= 0)
-						{
-							Player.cursorItemIconID = ItemID.Wood;
-						}
-						if (forageFocus3 && tile.TileFrameX >= 0)
-						{
-							Player.cursorItemIconID = ItemID.Apple;
-						}
+						if (forageFocus1)	{	Player.cursorItemIconID = ItemID.BrownMoss;	}
+						if (forageFocus2)	{	Player.cursorItemIconID = ItemID.Wood;	}
+						if (forageFocus3)	{	Player.cursorItemIconID = ItemID.Banana;	}
 					}
 				}
 				else if (IndependenceConfig.Instance.enableForagingFromUncommonPlants)
 				{
-					if (plantUncommon)
+					if (plantUncommon && tile.TileFrameX >= 0)
 					{
 						Player.cursorItemIconEnabled = true;
-						if (forageFocus1 && tile.TileFrameX >= 0)
-						{
-							Player.cursorItemIconID = ItemID.Hay;
-						}
-						if (forageFocus2 && tile.TileFrameX >= 0)
-						{
-							Player.cursorItemIconID = ItemID.Wood;
-						}
-						if (forageFocus3 && tile.TileFrameX >= 0)
-						{
-							Player.cursorItemIconID = ItemID.Apple;
-						}
+						if (forageFocus1)	{	Player.cursorItemIconID = ItemID.BrownMoss;	}
+						if (forageFocus2)	{	Player.cursorItemIconID = ItemID.Wood;	}
+						if (forageFocus3)	{	Player.cursorItemIconID = ItemID.Apple;	}
 					}
 				}
 			}
