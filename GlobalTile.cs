@@ -79,7 +79,7 @@ namespace Independence
 					{
 						if (forageFocus1)
 						{
-							WorldGen.KillTile(i, j);
+							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(4) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);
@@ -103,7 +103,7 @@ namespace Independence
 						}
 						if (forageFocus2)
 						{
-							WorldGen.KillTile(i, j);
+							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Wood, 1);
@@ -117,7 +117,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.GreenMoss, 1);
@@ -125,7 +125,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
 									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
@@ -155,7 +155,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BrownMoss, 1);
@@ -163,7 +163,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
 									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsJungle) == 0)
@@ -181,7 +181,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlueMoss, 1);
@@ -192,7 +192,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.PurpleMoss, 1);
@@ -200,7 +200,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
 									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCorruption) == 0)
@@ -218,7 +218,7 @@ namespace Independence
 						{
 							if (forageFocus1)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
 								{
 									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.RedMoss, 1);
@@ -226,7 +226,7 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
-								WorldGen.KillTile(i, j);
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
 									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCrimson) == 0)
@@ -248,7 +248,7 @@ namespace Independence
 					{
 						if (forageFocus1)
 						{
-							WorldGen.KillTile(i, j);
+							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(2) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);
@@ -272,7 +272,7 @@ namespace Independence
 						}
 						if (forageFocus3)
 						{
-							WorldGen.KillTile(i, j);
+							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (type == TileID.SeaOats)
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)

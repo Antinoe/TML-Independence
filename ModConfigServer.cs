@@ -18,6 +18,14 @@ namespace Independence
         [DefaultValue(true)]
         public bool enableForaging {get; set;}
 		
+        [Label("[i:Sickle] Forage Plant Break Chance")]
+        [Tooltip("[Default: 4]")]
+        [Slider]
+        [DefaultValue(4)]
+        [Range(1, 10)]
+        [Increment(1)]
+        public int plantBreakChance {get; set;}
+		
         [Label("Forage from Common Plants")]
         [Tooltip("If false, Players cannot Forage from Common Plants, such as Grass and Mushrooms.\n[Default: On]")]
         [DefaultValue(true)]
