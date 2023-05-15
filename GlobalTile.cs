@@ -55,8 +55,8 @@ namespace Independence
 			var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
 			var forageFocus1 = holdShift;
 			var forageFocus2 = holdControl;
-			var forageFocus3 = holdShift && holdControl;
-			var forageFocus4 = holdAlt;
+			var forageFocus3 = holdAlt;
+			var forageFocus4 = holdShift && holdControl;
 			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
 			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
 			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
@@ -67,6 +67,10 @@ namespace Independence
 			bool plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
 			bool plantVine = (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines);
 
+			if (type == TileID.MatureHerbs)
+			{
+				WorldGen.KillTile(i, j);
+			}
 			if (IndependenceConfig.Instance.enableForaging)
 			{
 				if (IndependenceConfig.Instance.enableForagingFromCommonPlants)
@@ -100,6 +104,10 @@ namespace Independence
 						if (forageFocus2)
 						{
 							WorldGen.KillTile(i, j);
+							if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)
+							{
+								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Wood, 1);
+							}
 							if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)
 							{
 								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);
@@ -353,7 +361,15 @@ namespace Independence
 			bool plantCommonAsh = (type == TileID.AshPlants);
 			bool plantUncommon = (type == TileID.SeaOats || type == TileID.Cattail || type == TileID.LilyPad);
 			bool plantVine = (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines);
-
+			
+			if (type == TileID.MatureHerbs)
+			{
+				Player.cursorItemIconEnabled = true;
+				if (tile.TileFrameX >= 0)
+				{
+					Player.cursorItemIconID = ItemID.PowerGlove;
+				}
+			}
 			if (IndependenceConfig.Instance.enableForaging)
 			{
 				if (IndependenceConfig.Instance.enableForagingFromCommonPlants)

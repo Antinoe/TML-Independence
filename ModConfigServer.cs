@@ -43,6 +43,11 @@ namespace Independence
         [DefaultValue(true)]
         public bool enableForagingAcorn {get; set;}
 		
+        [Label("[i:Wood] Forage Wood")]
+        [Tooltip("[Default: On]")]
+        [DefaultValue(true)]
+        public bool enableForagingWood {get; set;}
+		
         [Label("[i:StoneBlock] Forage Stone")]
         [Tooltip("[Default: On]")]
         [DefaultValue(true)]
