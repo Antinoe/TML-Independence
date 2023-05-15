@@ -50,13 +50,15 @@ namespace Independence
 		//public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
         public override void RightClick(int i, int j, int type)
 		{
-			//var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
-			//var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
+			var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
+			var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
 			//var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
-			var forageFocus1 = Independence.ForageFocus1.Current;
-			var forageFocus2 = Independence.ForageFocus2.Current;
-			var forageFocus3 = Independence.ForageFocus3.Current;
-			//var forageFocus4 = holdShift && holdControl;
+			var forageFocus1 = holdShift && !holdControl;
+			var forageFocus2 = holdControl && !holdShift;
+			var forageFocus3 = holdShift && holdControl;
+			//var forageFocus1 = Independence.ForageFocus1.Current;
+			//var forageFocus2 = Independence.ForageFocus2.Current;
+			//var forageFocus3 = Independence.ForageFocus3.Current;
 			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
 			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
 			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
@@ -125,26 +127,27 @@ namespace Independence
 							}
 							if (forageFocus3)
 							{
+								Main.NewText("Forage Focus 3");
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Apple, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Apricot, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Grapefruit, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Lemon, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsForest) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Peach, 1);
 									}
@@ -166,11 +169,11 @@ namespace Independence
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsJungle) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Mango, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsJungle) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Pineapple, 1);
 									}
@@ -203,18 +206,18 @@ namespace Independence
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCorruption) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlackCurrant, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCorruption) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Elderberry, 1);
 									}
 								}
 							}
 						}
-						if (plantCommonCorrupt)
+						if (plantCommonCrimson)
 						{
 							if (forageFocus1)
 							{
@@ -229,13 +232,39 @@ namespace Independence
 								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCrimson) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BloodOrange, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsCrimson) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Rambutan, 1);
+									}
+								}
+							}
+						}
+						if (plantCommonAsh)
+						{
+							if (forageFocus1)
+							{
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
+								if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
+								{
+									Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.LavaMoss, 1);
+								}
+							}
+							if (forageFocus3)
+							{
+								if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
+								if (IndependenceConfig.Instance.enableForagingForFruits)
+								{
+									if (Main.rand.Next(100) == 0)
+									{
+										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Pomegranate, 1);
+									}
+									if (Main.rand.Next(100) == 0)
+									{
+										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.SpicyPepper, 1);
 									}
 								}
 							}
@@ -277,62 +306,15 @@ namespace Independence
 							{
 								if (IndependenceConfig.Instance.enableForagingForFruits)
 								{
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsPalm) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Banana, 1);
 									}
-									if (Main.rand.Next(IndependenceConfig.Instance.forageChanceFruitsPalm) == 0)
+									if (Main.rand.Next(100) == 0)
 									{
 										Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Coconut, 1);
 									}
 								}
-							}
-						}
-					}
-				}
-				if (IndependenceConfig.Instance.enableForagingFromVines)
-				{
-					if (type == TileID.Vines || type == TileID.VineFlowers || type == TileID.JungleVines || type == TileID.MushroomVines || type == TileID.CrimsonVines)
-					{
-						WorldGen.KillTile(i, j);
-						if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(80) == 0)
-						{
-							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);
-						}
-						if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(4) == 0)
-						{
-							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);
-						}
-						if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(10) == 0)
-						{
-							Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);
-						}
-						if (type == TileID.VineFlowers)
-						{
-							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(80) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);
-							}
-						}
-						if (type == TileID.JungleVines)
-						{
-							if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BrownMoss, 1);
-							}
-						}
-						if (type == TileID.MushroomVines)
-						{
-							if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.BlueMoss, 1);
-							}
-						}
-						if (type == TileID.CrimsonVines)
-						{
-							if (IndependenceConfig.Instance.enableForagingMoss && Main.rand.Next(10) == 0)
-							{
-								Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.RedMoss, 1);
 							}
 						}
 					}
@@ -345,13 +327,15 @@ namespace Independence
 			Tile tile = Main.tile[i, j];
 			Player Player = Main.LocalPlayer;
 
-			//var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
-			//var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
+			var holdShift = Main.keyState.IsKeyDown(Keys.LeftShift);
+			var holdControl = Main.keyState.IsKeyDown(Keys.LeftControl);
 			//var holdAlt = Main.keyState.IsKeyDown(Keys.LeftAlt);
-			var forageFocus1 = Independence.ForageFocus1.Current;
-			var forageFocus2 = Independence.ForageFocus2.Current;
-			var forageFocus3 = Independence.ForageFocus3.Current;
-			//var forageFocus4 = holdShift && holdControl;
+			var forageFocus1 = holdShift && !holdControl;
+			var forageFocus2 = holdControl && !holdShift;
+			var forageFocus3 = holdShift && holdControl;
+			//var forageFocus1 = Independence.ForageFocus1.Current;
+			//var forageFocus2 = Independence.ForageFocus2.Current;
+			//var forageFocus3 = Independence.ForageFocus3.Current;
 			bool plantCommon = (type == TileID.Plants || type == TileID.Plants2 || type == TileID.JunglePlants || type == TileID.JunglePlants2 || type == TileID.MushroomPlants || type == TileID.CorruptPlants || type == TileID.CrimsonPlants || type == TileID.AshPlants);
 			bool plantCommonDefault = (type == TileID.Plants || type == TileID.Plants2);
 			bool plantCommonJungle = (type == TileID.JunglePlants || type == TileID.JunglePlants2);
@@ -396,20 +380,17 @@ namespace Independence
 					if (plantUncommon)
 					{
 						Player.cursorItemIconEnabled = true;
-						if (tile.TileFrameX >= 0)
+						if (forageFocus1 && tile.TileFrameX >= 0)
 						{
-							Player.cursorItemIconID = ItemID.PowerGlove;
+							Player.cursorItemIconID = ItemID.Hay;
 						}
-					}
-				}
-				else if (IndependenceConfig.Instance.enableForagingFromVines)
-				{
-					if (plantVine)
-					{
-						Player.cursorItemIconEnabled = true;
-						if (tile.TileFrameX >= 0)
+						if (forageFocus2 && tile.TileFrameX >= 0)
 						{
-							Player.cursorItemIconID = ItemID.PowerGlove;
+							Player.cursorItemIconID = ItemID.Wood;
+						}
+						if (forageFocus3 && tile.TileFrameX >= 0)
+						{
+							Player.cursorItemIconID = ItemID.Apple;
 						}
 					}
 				}

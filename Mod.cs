@@ -6,6 +6,7 @@ namespace Independence
 {
 	public class Independence : Mod
 	{
+        /*
         public static ModKeybind ForageFocus1;
         public static ModKeybind ForageFocus2;
         public static ModKeybind ForageFocus3;
@@ -23,5 +24,6 @@ namespace Independence
             ForageFocus2 = null;
             ForageFocus3 = null;
         }
+        */
 	}
 }
