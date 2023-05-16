@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Input;
 using Terraria;
 using Terraria.ID;
 using Terraria.DataStructures;
@@ -12,39 +9,39 @@ using Microsoft.Xna.Framework;
 namespace Independence
 {
 
-/*
-	List:
-	-Firewood
-	-Stones
-	-Berries
-	-Mushrooms
-	-Insects
-	-Wild Herbs
-	-Wild Plants
-	-Trash
-	-Animals
-	-Crops
-	-Medicinal Plants
-	-Fruits
+    /*
+        List:
+        -Firewood
+        -Stones
+        -Berries
+        -Mushrooms
+        -Insects
+        -Wild Herbs
+        -Wild Plants
+        -Trash
+        -Animals
+        -Crops
+        -Medicinal Plants
+        -Fruits
 
-	Focus 1:
-	-Mushrooms
-	-Wild Herbs
-	-Wild Plants
-	-Trash
-	-Medicinal Plants
+        Focus 1:
+        -Mushrooms
+        -Wild Herbs
+        -Wild Plants
+        -Trash
+        -Medicinal Plants
 
-	Focus 2:
-	-Firewood
-	-Stones
+        Focus 2:
+        -Firewood
+        -Stones
 
-	Focus 3:
-	-Berries
-	-Insects
-	-Animals
-	-Crops
-	-Fruits
-*/
+        Focus 3:
+        -Berries
+        -Insects
+        -Animals
+        -Crops
+        -Fruits
+    */
 
     public class IndependenceGlobalTile : GlobalTile
 	{
@@ -85,7 +82,6 @@ namespace Independence
 							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(4) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);}
-							if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);}
 							if (IndependenceConfig.Instance.enableForagingAcorn && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);}
 							if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(80) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);}
 							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(160) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);}
@@ -221,7 +217,6 @@ namespace Independence
 							SoundEngine.PlaySound(SoundID.Grass with {Pitch = -0.75f, Volume = 1f}, new Vector2(i * 16, j * 16));
 							if (Main.rand.Next(IndependenceConfig.Instance.plantBreakChance) == 0) {	WorldGen.KillTile(i, j);	}
 							if (IndependenceConfig.Instance.enableForagingHay && Main.rand.Next(2) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Hay, 1);}
-							if (IndependenceConfig.Instance.enableForagingCobweb && Main.rand.Next(5) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Cobweb, 1);}
 							if (IndependenceConfig.Instance.enableForagingAcorn && Main.rand.Next(10) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Acorn, 1);}
 							if (IndependenceConfig.Instance.enableForagingVine && Main.rand.Next(40) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Vine, 1);}
 							if (IndependenceConfig.Instance.enableForagingHerbBag && Main.rand.Next(80) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.HerbBag, 1);}

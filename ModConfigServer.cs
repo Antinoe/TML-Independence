@@ -38,10 +38,6 @@ namespace Independence
         [DefaultValue(true)]
         public bool enableForagingHay {get; set;}
 		
-        [Label("[i:Cobweb] Forage Cobwebs")]
-        [DefaultValue(true)]
-        public bool enableForagingCobweb {get; set;}
-		
         [Label("[i:Acorn] Forage Acorns")]
         [DefaultValue(true)]
         public bool enableForagingAcorn {get; set;}
