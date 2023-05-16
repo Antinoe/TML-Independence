@@ -199,7 +199,7 @@ namespace Independence
 							if (forageFocus2)
 							{
 								if (IndependenceConfig.Instance.enableForagingWood && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.AshWood, 1);}
-								if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.Obsidian, 1);}
+								if (IndependenceConfig.Instance.enableForagingStone && Main.rand.Next(20) == 0)	{Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ItemID.StoneBlock, 1);}
 							}
 							if (forageFocus3)
 							{
