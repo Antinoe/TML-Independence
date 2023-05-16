@@ -28,7 +28,7 @@ namespace Independence.Content.Items.Special
 		public override void AddRecipes()
         {
 			CreateRecipe(1)
-            .AddIngredient(ItemID.Wood, 5)
+            .AddRecipeGroup("Wood", 5)
             .Register();
         }
 	}

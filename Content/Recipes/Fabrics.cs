@@ -13,10 +13,18 @@ namespace Independence.Content.Recipes
 				Recipe.Create(ItemID.Rope,3)
 				.AddIngredient(ItemID.Cobweb, 1)
 				.Register();
-				
-				Recipe.Create(ItemID.Cobweb,2)
-				.AddRecipeGroup("Independence:Moss", 1)
+
+				Recipe.Create(ItemID.Cobweb,1)
+				.AddIngredient(ItemID.Rope, 3)
 				.Register();
+				
+				Recipe.Create(ItemID.Cobweb,1)
+				.AddIngredient(ItemID.WebRope, 3)
+				.Register();
+				
+				/*Recipe.Create(ItemID.Cobweb,2)
+				.AddRecipeGroup("Moss", 1)
+				.Register();*/
 				
 				Recipe.Create(ItemID.TatteredCloth,1)
 				.AddIngredient(ItemID.Cobweb, 14)
@@ -33,7 +41,7 @@ namespace Independence.Content.Recipes
 				.AddTile(TileID.WorkBenches)
 				.Register();
 				
-				Recipe.Create(ItemID.Cobweb,2)
+				/*Recipe.Create(ItemID.Cobweb,2)
 				.AddIngredient(ItemID.Acorn, 1)
 				.Register();
 				
@@ -47,7 +55,7 @@ namespace Independence.Content.Recipes
 				
 				Recipe.Create(ItemID.Hay,2)
 				.AddIngredient(ItemID.Cobweb, 1)
-				.Register();
+				.Register();*/
 			}
         }
 	}

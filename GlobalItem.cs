@@ -77,19 +77,25 @@ namespace Independence
 		{
 			var source = player.GetSource_Misc("PlayerDropItemCheck");
 			var heldItem = Main.mouseItem;
+			bool isFlower = (heldItem.type == ItemID.Blinkroot || heldItem.type == ItemID.Daybloom || heldItem.type == ItemID.Deathweed || heldItem.type == ItemID.Fireblossom || heldItem.type == ItemID.Moonglow || heldItem.type == ItemID.Shiverthorn || heldItem.type == ItemID.Waterleaf);
+			bool isVine = (heldItem.type == ItemID.Vine);
+			bool isSapling = (heldItem.type == ItemID.Acorn);
+			bool isHay = (heldItem.type == ItemID.Hay);
+			bool isGrindable = (isFlower || isVine || isSapling || isHay);
 			//	TODO: Make methods for Grinding and Sifting. May include details of input and output within parameter.
 
 			//	Mortar and Pestle
 			if (item.type == ModContent.ItemType<Content.Items.Special.MortarPestle>())
 			{
 				item.stack++;
-				//Main.NewText("RightClick");
-				//SoundEngine.PlaySound(SoundID.MenuTick, player.position);
-				if (heldItem.type == ItemID.Daybloom)
+				if (isGrindable)
 				{
-					SoundEngine.PlaySound(SoundID.Dig, player.position);
+					SoundEngine.PlaySound(SoundID.Dig with {Pitch = +2f, Volume = 1f}, player.position);
 					heldItem.stack--;
-					player.QuickSpawnItem(source, ItemID.Hay, 1);
+					if (isHay)	{player.QuickSpawnItem(source, ItemID.Cobweb, Main.rand.Next(1,3));}
+					if (isSapling)	{player.QuickSpawnItem(source, ItemID.Cobweb, Main.rand.Next(2,6));}
+					if (isFlower)	{player.QuickSpawnItem(source, ItemID.Cobweb, Main.rand.Next(5,10));}
+					if (isVine)	{player.QuickSpawnItem(source, ItemID.Cobweb, Main.rand.Next(10,20));}
 				}
 			}
 			//	Sieve
