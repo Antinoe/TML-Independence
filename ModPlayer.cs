@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Independence.Content.Items;
 
 namespace Independence
 {
@@ -23,7 +24,7 @@ namespace Independence
 		{
 			return new Item[]
 			{
-				new Item(ModContent.ItemType<Content.Items.Special.CrudeBag>(), 1, 0)
+				new Item(ModContent.ItemType<CrudeBag>(), 1, 0)
 			};
 		}
 	}

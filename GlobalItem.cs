@@ -14,6 +14,7 @@ using Terraria.Utilities;
 using Terraria.ID;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
+using Independence.Content.Items;
 
 namespace Independence
 {
@@ -85,7 +86,7 @@ namespace Independence
 			//	TODO: Make methods for Grinding and Sifting. May include details of input and output within parameter.
 
 			//	Mortar and Pestle
-			if (item.type == ModContent.ItemType<Content.Items.Special.MortarPestle>())
+			if (item.type == ModContent.ItemType<MortarPestle>())
 			{
 				item.stack++;
 				if (isGrindable)
