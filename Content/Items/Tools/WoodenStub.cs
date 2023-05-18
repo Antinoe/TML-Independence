@@ -29,7 +29,6 @@ namespace Independence.Content.Items.Tools
 		}
 		
 		public override bool AltFunctionUse(Player Player) => true;
-		
 		public override bool CanUseItem(Player Player)
 		{
 			if (Player.altFunctionUse == 2)
@@ -50,9 +49,12 @@ namespace Independence.Content.Items.Tools
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe(1)
-			.AddIngredient(ItemID.Acorn, 5)
-            .Register();
+			if (IndependenceConfig.craftWoodenStub)
+			{
+				CreateRecipe(1)
+				.AddRecipeGroup("Wood", 1)
+				.Register();
+			}
 		}
 	}
 }

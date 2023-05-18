@@ -122,7 +122,7 @@ namespace Independence
         public int forageChanceCommonPlantsHerbBag {get; set;}
 		*/
 		
-        [Label("Forage for Fruits")]
+        [Label("[i:Apple] Forage for Fruits")]
         [Tooltip("If false, Players cannot Forage for Fruits from Common Plants.")]
         [DefaultValue(true)]
         public bool enableForagingForFruits {get; set;}
@@ -236,14 +236,12 @@ namespace Independence
         [DefaultValue(true)]
         public bool enableWorkstations {get; set;}
 
-    [Header("Starting")]
+    [Header("Crude Bag")]
         
         [Label("Give Copper Starter Set")]
         [Tooltip("If true, Players will still be granted Copper Tools upon spawning.")]
         [DefaultValue(false)]
         public bool giveCopperSet {get; set;}
-        
-    [Header("Crude Bag")]
         
         [Label("Give Wooden Stake")]
         [Tooltip("If false, Players will not receive a Wooden Stake.")]
@@ -324,6 +322,11 @@ namespace Independence
         public int weaponsWoodenStakeUseTime {get; set;}
         
     [Header("Tools")]
+        
+        [Label("Can Craft Wooden Stub?")]
+        [Tooltip("If true, Players will be able to craft the Wooden Stub.")]
+        [DefaultValue(true)]
+        public bool craftWoodenStub {get; set;}
         
         [Label("Stone Axe Damage")]
         [Tooltip("How much damage the Stone Axe deals.\n(Requires World Reload.)")]
