@@ -31,7 +31,7 @@ namespace Independence.Content.Items.Tools
 		public override bool AltFunctionUse(Player Player) => true;
 		public override bool CanUseItem(Player Player)
 		{
-			if (Player.altFunctionUse == 2)
+			/*if (Player.altFunctionUse == 2)
 			{
 				Item.hammer = 1;
 				Item.axe = 1;
@@ -43,7 +43,7 @@ namespace Independence.Content.Items.Tools
 				Item.axe = 1;
 				Item.pick = 1;
 				Item.hammer = 0;
-			}
+			}*/
 			return true;
 		}
 		
