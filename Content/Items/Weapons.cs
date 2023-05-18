@@ -1,11 +1,79 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Independence.Content.Projectiles;
 
-namespace Independence.Content.Items.Weapons
+namespace Independence.Content.Items
 {
+	public class WoodenClub : ModItem
+	{
+		public override void SetStaticDefaults() 
+		{
+			// DisplayName.SetDefault("Wooden Club");
+		}
+        public override string Texture => "Independence/Content/Items/Weapons/WoodenClub";
+
+		public override void SetDefaults() 
+		{
+			Item.damage = IndependenceConfig.Instance.weaponsWoodenClubDamage;
+			Item.width = 36;
+			Item.height = 34;
+			Item.scale = 1f;
+			Item.useTime = IndependenceConfig.Instance.weaponsWoodenClubUseTime;
+			Item.useAnimation = IndependenceConfig.Instance.weaponsWoodenClubUseTime;
+			Item.useStyle = 1;
+			Item.knockBack = IndependenceConfig.Instance.weaponsWoodenClubKnockback;
+			Item.value = 200;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
+			Item.DamageType = DamageClass.Melee; //This is what allows Reforging to work on this item.
+		}
+
+		public override void AddRecipes()
+		{
+			CreateRecipe(1)
+			.AddRecipeGroup(RecipeGroupID.Wood, 11)
+            .Register();
+		}
+	}
+	public class WoodenStake : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			// DisplayName.SetDefault("Wooden Stake");
+		}
+        public override string Texture => "Independence/Content/Items/Weapons/WoodenStake";
+		
+		public override void SetDefaults()
+		{
+			Item.damage = IndependenceConfig.Instance.weaponsWoodenStakeDamage;
+			Item.width = 16;
+			Item.height = 16;
+			Item.scale = 1f;
+			Item.useTime = IndependenceConfig.Instance.weaponsWoodenStakeUseTime;
+			Item.useAnimation = IndependenceConfig.Instance.weaponsWoodenStakeUseTime;
+			Item.useStyle = ItemUseStyleID.Rapier;
+			Item.knockBack = 5;
+			Item.value = 100;
+			Item.rare = 0;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = false;
+			Item.DamageType = DamageClass.Melee; //This is what allows Reforging to work on this Item.
+			
+			//Projectile stuff.
+			Item.noUseGraphic = true; //The item should not be visible upon use, as it is a Projectile.
+			Item.noMelee = true; //The item will not deal damage. The projectile will.
+			Item.shoot = ModContent.ProjectileType<Content.Projectiles.WoodenStakeProjectile>(); //The projectile itself is what makes a shortsword work.
+			Item.shootSpeed = 2.1f; // This value bleeds into the behavior of the projectile as velocity. Keep that in mind when tweaking values.
+		}
+		
+		public override void AddRecipes()
+		{
+			CreateRecipe(1)
+			.AddRecipeGroup(RecipeGroupID.Wood, 2)
+            .Register();
+		}
+	}
 	public class WoodenStakeTEST : ModItem
 	{
 		public override void SetStaticDefaults() 
@@ -13,6 +81,7 @@ namespace Independence.Content.Items.Weapons
 			// DisplayName.SetDefault("Wooden Stake Test");
 			// Tooltip.SetDefault("Right click for a slash that confuses enemies and heals you.");
 		}
+        public override string Texture => "Independence/Content/Items/Weapons/WoodenStakeTEST";
 
 		public override void SetDefaults() 
 		{

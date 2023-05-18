@@ -1,9 +1,8 @@
-﻿using System;
-using Terraria.Localization;
-using Terraria.ModLoader;
+using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
-namespace Independence.Content.Items.Materials
+namespace Independence.Content.Items
 {
 	public class StoneShards : ModItem
 	{
@@ -12,6 +11,7 @@ namespace Independence.Content.Items.Materials
 			// DisplayName.SetDefault("Stone Shards");
 			// Tooltip.SetDefault("A small pile of stone shards.");
 		}
+        public override string Texture => "Independence/Content/Items/Materials/StoneShards";
 
 		public override void SetDefaults()
 		{
